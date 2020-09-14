@@ -21,7 +21,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Freedom\\Support\\": "src/ErrorHandler/"
+      "Freedom\\ErrorHandler\\": "src/ErrorHandler/"
     }
   },
   "extra": {

@@ -4,6 +4,7 @@ namespace Freedom\ErrorHandler\Traits;
 use Exception;
 use Freedom\ErrorHandler\ExceptionReport\EmailExceptionReport;
 use Freedom\ErrorHandler\Mail\EmailReport;
+use Mail;
 
 trait HandlesEmailReport {
 

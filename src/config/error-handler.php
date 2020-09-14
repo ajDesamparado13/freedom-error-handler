@@ -13,7 +13,7 @@ return [
     ],
     'logger' => [
         'slack' => [
-            'mentions' => 'LOG_SLACK_MENTIONS',
+            'mentions' => env('LOG_SLACK_MENTIONS'),
         ]
     ]
 ];

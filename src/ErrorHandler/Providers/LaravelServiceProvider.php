@@ -17,7 +17,7 @@ class LaravelServiceProvider extends ServiceProvider
             __DIR__.'/../../config/error-handler.php' => config_path('error-handler.php'),
         ], 'config');
         $this->mergeConfigFrom(__DIR__.'/../../config/error-handler.php', 'error-handler');
-
+        $this->loadViewsFrom(__DIR__.'/../views','error-handler');
     }
 
     /**

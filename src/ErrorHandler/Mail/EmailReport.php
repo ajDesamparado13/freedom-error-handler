@@ -46,7 +46,7 @@ class EmailReport extends Mailable
             $mail->bcc($bcc);
         }
 
-        return $mail;
+        return $mail->with(['report' => $this->report]);
     }
 
 }

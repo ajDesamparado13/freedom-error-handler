@@ -3,6 +3,7 @@ namespace Freedom\ErrorHandler\Logger;
 
 use Monolog\Handler\SlackWebhookHandler;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Request;
 
 
 class Slack
@@ -18,7 +19,10 @@ class Slack
         $extras = array_filter([
             'personnel' => \Config::get('error-handler.logger.slack.mentions'),
             'env'      => Str::upper(\Config::get('app.env')),
-            'url'      => \Config::get('app.url')
+            'site'      => \Config::get('app.url'),
+            'url'        => Request::fullUrl(),
+            'method'     => Request::method(),
+            'parameters' => json_encode(Request::all())
         ]);
 
         foreach ($logger->getHandlers() as $handler) {
